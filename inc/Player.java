@@ -1,6 +1,6 @@
 package inc;
 
-class Player {
+public class Player {
     
     // INSTANCE VARIABLES
     private String playerName;

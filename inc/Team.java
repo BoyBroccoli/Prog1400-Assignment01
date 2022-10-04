@@ -1,6 +1,6 @@
 package inc;
 
-class Team {
+public class Team {
 
     // INSTANCE VARIABLES
     private String teamName;

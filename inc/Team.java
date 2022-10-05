@@ -9,6 +9,7 @@ public class Team {
     private double teamTotal;
     double teamBudget;
     String teamStars;
+    private Player[]; // fix this.
 
     // METHODS 
 

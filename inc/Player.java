@@ -36,19 +36,19 @@ public class Player {
 
     // SETTERS
 
-    public String setPlayerName(String name){
-        return this.playerName = name;
+    public void setPlayerName(String name){
+        this.playerName = name;
     }
 
-    public double setPlayerGoals(double goals){
-        return this.playerGoals = goals;
+    public void setPlayerGoals(double goals){
+        this.playerGoals = goals;
     }
 
-    public double setPlayerAssists(double assists){
-        return this.playerAssists = assists;
+    public void setPlayerAssists(double assists){
+        this.playerAssists = assists;
     }
 
-    public double setPlayerTotal(){
-        return this.playerTotal = this.playerGoals + this.playerAssists;
+    public void setPlayerTotal(){
+        this.playerTotal = this.playerGoals + this.playerAssists;
     }
 }

@@ -7,12 +7,9 @@ public class Main{
 
         // DECLARING VARIABLES
         String userInput;
-        String currentTeamName;
-        double userPointsInput;
         
         // DECLARING BOOLEANS
-        boolean validInput = false, validName = false, validGoals = false, validAssists = false;
-        
+        boolean validInput = false;
 
         // DECLARING ARRAY OBJECTS FOR TEAM
         Team team1 = new Team();
@@ -20,9 +17,7 @@ public class Main{
         Team team3 = new Team();
         Team[] fantasyTeams = {team1, team2, team3};
         
-        // MUST BE A BETTER WAY//
         // DECLARING ARRAY OBJECTS FOR PLAYERS
-        Player currentPlayer;
         Player player1= new Player(); 
         Player player2= new Player();
         Player player3= new Player(); 
@@ -70,103 +65,37 @@ public class Main{
         System.out.println(playerEntryHeader);
         System.out.println(longLine);
         
-        // MUST FIX VALIDATION (WONT EXIT FOR LOOP)//
-        //SHOULD CREATE A FUNCTION//
         // For Team1 players1-4
         for (int i = 0; i< playersTeam1.length; i++){
-            while (validInput == false){
-                currentTeamName = fantasyTeams[0].getTeamName();
-                currentPlayer = playersTeam1[i];
-                System.out.println("Enter players for " + currentTeamName + ":\n");
-
-                System.out.println("Enter name for player # " + (i+1)+":");
-                if(scan.hasNextLine()){
-                    validName = true;
-                    userInput = currentPlayer.setPlayerName(scan.nextLine());
-                    while(validName){
-                        
-                        System.out.println("Enter number of goals for " + currentPlayer.getPlayerName() + ":");
-                        if(scan.hasNextDouble()) {
-                            validGoals = true;
-                            userPointsInput = currentPlayer.setPlayerGoals(scan.nextDouble());
-                            while(validGoals){
-
-                                System.out.println("Enter number of assists for " + currentPlayer.getPlayerName() + ":");
-                                if (scan.hasNextDouble()){
-                                    validAssists = true;
-                                    validInput = true;
-                                    while(validInput){
-                                        userPointsInput = currentPlayer.setPlayerAssists(scan.nextDouble());
-                                        currentPlayer.setPlayerTotal();
-                                        validAssists = false;
-                                        validGoals = false;
-                                        validName = false;
-                                        validInput = false;
-                                    }
-                                    
-                                }else {
-                                    System.out.println("Please enter a whole or decimal number.\n");
-                                    scan.nextLine();
-                                    validAssists = false;
-                                }
-                            }                         
-                        } else {
-                            System.out.println("Please enter a whole or decimal number.\n");
-                            scan.nextLine();
-                            validGoals = false;
-                        }
-                    }           
-                } else {
-                    System.out.println("Please enter a name with characters.\n");
-                    scan.nextLine();
-                    validName = false;
-                }            
-            } 
-        }
-
-
-        // For Team2 players5-8
-        for (int i = 0; i< playersTeam2.length; i++){
-            currentTeamName = fantasyTeams[1].getTeamName();
-            currentPlayer = playersTeam1[i];
+            String currentTeamName = fantasyTeams[0].getTeamName();
+            Player currentPlayer = playersTeam1[i];
             System.out.println("Enter players for " + currentTeamName + ":\n");
             
             System.out.println("Enter name for player # " + (i+1)+":");
             userInput = currentPlayer.setPlayerName(scan.nextLine());
+            System.out.println("\n");
+        }
 
+        // For Team2 players5-8
+        for (int i = 0; i< playersTeam2.length; i++){
+            String currentTeamName = fantasyTeams[1].getTeamName();
+            Player currentPlayer = playersTeam1[i];
+            System.out.println("Enter players for " + currentTeamName + ":\n");
+            
             System.out.println("Enter name for player # " + (i+1)+":");
             userInput = currentPlayer.setPlayerName(scan.nextLine());
-
-            System.out.println("Enter number of goals for " + currentPlayer.getPlayerName() + ":");
-            userPointsInput = currentPlayer.setPlayerGoals(scan.nextDouble());
-
-            System.out.println("Enter number of assists for " + currentPlayer.getPlayerName() + ":");
-            userPointsInput = currentPlayer.setPlayerAssists(scan.nextDouble());
-            currentPlayer.setPlayerTotal();
             System.out.println("\n");
-            scan.nextLine();
         }
 
         // For Team3 players9-12
         for (int i = 0; i< playersTeam3.length; i++){
-            currentTeamName = fantasyTeams[2].getTeamName();
-            currentPlayer = playersTeam1[i];
+            String currentTeamName = fantasyTeams[2].getTeamName();
+            Player currentPlayer = playersTeam1[i];
             System.out.println("Enter players for " + currentTeamName + ":\n");
             
             System.out.println("Enter name for player # " + (i+1)+":");
             userInput = currentPlayer.setPlayerName(scan.nextLine());
-
-            System.out.println("Enter name for player # " + (i+1)+":");
-            userInput = currentPlayer.setPlayerName(scan.nextLine());
-
-            System.out.println("Enter number of goals for " + currentPlayer.getPlayerName() + ":");
-            userPointsInput = currentPlayer.setPlayerGoals(scan.nextDouble());
-
-            System.out.println("Enter number of assists for " + currentPlayer.getPlayerName() + ":");
-            userPointsInput = currentPlayer.setPlayerAssists(scan.nextDouble());
-            currentPlayer.setPlayerTotal();
             System.out.println("\n");
-            scan.nextLine();
         }
 
     }

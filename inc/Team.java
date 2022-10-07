@@ -9,6 +9,7 @@ public class Team {
     private double teamTotal;
     double teamBudget;
     String teamStars;
+    private Player[]; // fix this.
 
     // METHODS 
 
@@ -51,20 +52,20 @@ public class Team {
 
     // SETTERS
 
-    public String setTeamName(String name){
-        return this.teamName = name;
+    public void setTeamName(String name){
+        this.teamName = name;
     }
 
-    public double setTeamGoals(double goals){
-        return this.teamGoals = goals;
+    public void setTeamGoals(double goals){
+        this.teamGoals = goals;
     }
 
-    public double setTeamAssists(double assists){
-        return this.teamAssists = assists;
+    public void setTeamAssists(double assists){
+        this.teamAssists = assists;
     }
 
-    public double setTeamTotal(){
-        return this.teamTotal = this.teamGoals + this.teamAssists;
+    public void setTeamTotal(){
+        this.teamTotal = this.teamGoals + this.teamAssists;
     }
 
 }

@@ -16,6 +16,14 @@ public class Main{
         Team team2 = new Team();
         Team team3 = new Team();
         Team[] fantasyTeams = {team1, team2, team3};
+
+        for (int i = 0; i < NUMOFTEAMS; i++){
+             Team currentTeam = fantasyTeams[i];
+             for(int j = 0; j< NUMOFPLAYERS; j++){
+                currentTeam.teamPlayers[j] = new Player();
+             }
+             
+        }
         
 
    
@@ -38,8 +46,15 @@ public class Main{
         for(int i = 0; i < NUMOFTEAMS; i++){
             System.out.println("Enter name for team # "+ (i+1) +":");
             Team currentTeam = fantasyTeams[i];
-            userInput= currentTeam.setTeamName(scan.nextLine());
+            userInput = scan.nextLine();
+            currentTeam.setTeamName(userInput);
             System.out.println("\n");
+        }
+
+        for (int i = 0; i < fantasyTeams.length; i++){
+
+            String currentTeamName = fantasyTeams[i].getTeamName();
+            System.out.println(currentTeamName);
         }
 
         
@@ -48,18 +63,22 @@ public class Main{
         System.out.println(playerEntryHeader);
         System.out.println(longLine);
         
-        // For Team1 players1-4
-        for (int i = 0; i< playersTeam1.length; i++){
-            String currentTeamName = fantasyTeams[0].getTeamName();
-            Player currentPlayer = playersTeam1[i];
-            System.out.println("Enter players for " + currentTeamName + ":\n");
-            
-            System.out.println("Enter name for player # " + (i+1)+":");
-            userInput = currentPlayer.setPlayerName(scan.nextLine());
+        // Setting player names for the teams.
+        for (int i = 0; i< fantasyTeams.length; i++){
+            String currentTeamName = fantasyTeams[i].getTeamName();
+            for (int j = 0; j<NUMOFPLAYERS; j++){
+                Player currentPlayer = fantasyTeams[i].teamPlayers[j];
+                System.out.println("Enter players for " + currentTeamName + ":\n");
+                
+                System.out.println("Enter name for player # " + (j+1)+":");
+                userInput = scan.nextLine();
+                currentPlayer.setPlayerName(userInput);
+            }
+           
             System.out.println("\n");
-        }
+        } 
 
-    }
+    } 
 
 
 // DECLARING CONSTANT

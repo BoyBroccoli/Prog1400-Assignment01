@@ -1,4 +1,9 @@
 package inc;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import inc.Player;
+import java.util.Arrays;
 
 public class Team {
 
@@ -9,13 +14,18 @@ public class Team {
     private double teamTotal;
     double teamBudget;
     String teamStars;
-    private Player[] teamPlayers; // fix this.
+    public Player[] teamPlayers; 
 
     // METHODS 
 
-    //public void outputTeamDetails(){
+    public Team(){
+        this.teamPlayers = new Player[4];
+    }
 
-    //}
+    public void outputTeamDetails(){
+        System.out.println(this.teamName + " Assists: "+ this.teamAssists +" Goals: "+ this.teamGoals + " Total Points: "+this.teamTotal);
+    }
+
 
     // GETTERS
 
@@ -67,5 +77,9 @@ public class Team {
     public void setTeamTotal(){
         this.teamTotal = this.teamGoals + this.teamAssists;
     }
+
+   
+
+    
 
 }

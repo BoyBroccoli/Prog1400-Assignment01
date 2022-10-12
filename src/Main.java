@@ -76,28 +76,6 @@ public class Main{
             System.out.println("\n");
         }
 
-        // For Team2 players5-8
-        for (int i = 0; i< playersTeam2.length; i++){
-            String currentTeamName = fantasyTeams[1].getTeamName();
-            Player currentPlayer = playersTeam1[i];
-            System.out.println("Enter players for " + currentTeamName + ":\n");
-            
-            System.out.println("Enter name for player # " + (i+1)+":");
-            userInput = currentPlayer.setPlayerName(scan.nextLine());
-            System.out.println("\n");
-        }
-
-        // For Team3 players9-12
-        for (int i = 0; i< playersTeam3.length; i++){
-            String currentTeamName = fantasyTeams[2].getTeamName();
-            Player currentPlayer = playersTeam1[i];
-            System.out.println("Enter players for " + currentTeamName + ":\n");
-            
-            System.out.println("Enter name for player # " + (i+1)+":");
-            userInput = currentPlayer.setPlayerName(scan.nextLine());
-            System.out.println("\n");
-        }
-
     }
 
 

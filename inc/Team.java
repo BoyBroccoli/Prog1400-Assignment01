@@ -9,13 +9,13 @@ public class Team {
     private double teamTotal;
     double teamBudget;
     String teamStars;
-    private Player[]; // fix this.
+    private Player[] teamPlayers; // fix this.
 
     // METHODS 
 
-    public void outputTeamDetails(){
+    //public void outputTeamDetails(){
 
-    }
+    //}
 
     // GETTERS
 

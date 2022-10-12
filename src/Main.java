@@ -17,25 +17,8 @@ public class Main{
         Team team3 = new Team();
         Team[] fantasyTeams = {team1, team2, team3};
         
-        // DECLARING ARRAY OBJECTS FOR PLAYERS
-        Player player1= new Player(); 
-        Player player2= new Player();
-        Player player3= new Player(); 
-        Player player4= new Player(); 
-        Player player5= new Player();
-        Player player6= new Player(); 
-        Player player7= new Player(); 
-        Player player8= new Player(); 
-        Player player9 = new Player();
-        Player player10 = new Player();
-        Player player11 = new Player();
-        Player player12 = new Player();
-        // Player[] fantasyPlayers ={player1, player2, player3, player4, 
-        //     player5, player6, player7, player8, 
-        //     player9, player10, player11, player12}; 
-        Player[] playersTeam1 = {player1, player2, player3, player4};
-        Player[] playersTeam2 = {player5, player6, player7, player8};
-        Player[] playersTeam3 = {player9, player10, player11, player12};
+
+   
         
 
         // DECLARING AND INITIALIZING Headers

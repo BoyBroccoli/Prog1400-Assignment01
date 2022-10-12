@@ -1,4 +1,5 @@
 package inc;
+import java.util.Scanner;
 
 public class Team {
 
@@ -53,6 +54,7 @@ public class Team {
     // SETTERS
 
     public void setTeamName(String name){
+        Scanner scan = new Scanner(System.in);
         this.teamName = name;
     }
 

@@ -7,6 +7,7 @@ public class Main{
 
         // DECLARING VARIABLES
         String userInput;
+        int tempValue;
         
         // DECLARING BOOLEANS
         boolean validInput = false;
@@ -51,8 +52,8 @@ public class Main{
             System.out.println("\n");
         }
 
+        // TEST: PRINTING TEAM NAMES -- will erase
         for (int i = 0; i < fantasyTeams.length; i++){
-
             String currentTeamName = fantasyTeams[i].getTeamName();
             System.out.println(currentTeamName);
         }
@@ -73,6 +74,17 @@ public class Main{
                 System.out.println("Enter name for player # " + (j+1)+":");
                 userInput = scan.nextLine();
                 currentPlayer.setPlayerName(userInput);
+
+                System.out.println("Enter number of goals for " + currentPlayer.getPlayerName());
+                tempValue = scan.nextInt();
+                currentPlayer.setPlayerGoals(tempValue);
+
+                System.out.println("Enter number of assists for " + currentPlayer.getPlayerName());
+                tempValue = scan.nextInt();
+                currentPlayer.setPlayerAssists(tempValue);
+
+                currentPlayer.setPlayerTotal();
+                
             }
            
             System.out.println("\n");

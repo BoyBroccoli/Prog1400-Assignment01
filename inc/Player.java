@@ -1,12 +1,14 @@
 package inc;
 
+import java.util.Scanner;
+
 public class Player {
     
     // INSTANCE VARIABLES
     private String playerName;
-    private double playerGoals;
-    private double playerAssists;
-    private double playerTotal;
+    private int playerGoals;
+    private int playerAssists;
+    private int playerTotal;
 
     // METHODS 
 
@@ -40,11 +42,11 @@ public class Player {
         this.playerName = name;
     }
 
-    public void setPlayerGoals(double goals){
+    public void setPlayerGoals(int goals){
         this.playerGoals = goals;
     }
 
-    public void setPlayerAssists(double assists){
+    public void setPlayerAssists(int assists){
         this.playerAssists = assists;
     }
 

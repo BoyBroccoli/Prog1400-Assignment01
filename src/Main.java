@@ -27,9 +27,6 @@ public class Main{
         }
         
 
-   
-        
-
         // DECLARING AND INITIALIZING Headers
         String greetingHeader = "FANTASY HOCKEY APPLICATION\n";
         String teamEntryHeader = "TEAM ENTRY\n";
@@ -129,7 +126,7 @@ public class Main{
 
 // DECLARING CONSTANT
 private static final int NUMOFTEAMS = 3;
-private static final int NUMOFPLAYERS = 4;
+private static final int NUMOFPLAYERS = 3;
 
     public String printLongLine(){
         String longLine = "====================";

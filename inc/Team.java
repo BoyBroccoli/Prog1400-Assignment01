@@ -76,7 +76,9 @@ public class Team {
 
     public void setTeamBudget(){
         Random random = new Random();
-        double teamBudget = random.nextDouble(100000);
+        int rangeMin = 0;
+        int rangeMax = 100000;
+        double teamBudget = rangeMin + (rangeMax - rangeMin) * random.nextDouble();
         this.teamBudget = teamBudget;
     }
 

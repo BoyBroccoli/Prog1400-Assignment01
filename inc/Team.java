@@ -1,10 +1,9 @@
 package inc;
 import java.util.Scanner;
-import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 import inc.Player;
-import java.util.Arrays;
+import java.util.Random;
+import java.text.DecimalFormat;
+
 
 public class Team {
 
@@ -24,7 +23,9 @@ public class Team {
     }
 
     public void outputTeamDetails(){
-        System.out.println(this.teamName + " Assists: "+ this.teamAssists +" Goals: "+ this.teamGoals + " Total Points: "+this.teamTotal);
+        System.out.println(this.teamName + " Assists: "+ this.teamAssists +
+        " Goals: "+ this.teamGoals + " Total Points: "+this.teamTotal +
+        " Budget : $" + this.getTeamBudget() + " Rating: " + this.teamStars);
     }
 
 
@@ -46,18 +47,11 @@ public class Team {
         return this.teamName;
     }
 
-    public double getTeamBudget(){
-        return this.teamBudget;
+    public String getTeamBudget(){
+        return String.format("%.2f", this.teamBudget);
     }
 
     public String getTeamStars(){
-        if (this.teamTotal > 20){
-            this.teamStars = "***";
-        } else if (this.teamTotal >= 10) {
-            this.teamStars = "**";
-        } else {
-            this.teamStars =" ";
-        }
         return this.teamStars;
     }
 
@@ -69,17 +63,34 @@ public class Team {
     }
 
     public void setTeamGoals(double goals){
-        this.teamGoals = goals;
+        this.teamGoals += goals;
     }
 
     public void setTeamAssists(double assists){
-        this.teamAssists = assists;
+        this.teamAssists += assists;
     }
 
     public void setTeamTotal(){
-        this.teamTotal = this.teamGoals + this.teamAssists;
+        this.teamTotal += this.teamGoals + this.teamAssists;
     }
 
+    public void setTeamBudget(){
+        Random random = new Random();
+        double teamBudget = random.nextDouble(100000);
+        this.teamBudget = teamBudget;
+    }
+
+    public void setTeamStars(){
+        if (this.teamTotal > 20){
+            this.teamStars = "*** stars";
+        } else if (this.teamTotal >= 10) {
+            this.teamStars = "** stars";
+        } else {
+            this.teamStars =" ";
+        }
+    }
+
+    public static final DecimalFormat decilForm = new DecimalFormat("0.00");
    
 
     

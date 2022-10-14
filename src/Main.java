@@ -20,10 +20,10 @@ public class Main{
 
         for (int i = 0; i < NUMOFTEAMS; i++){
              Team currentTeam = fantasyTeams[i];
+             currentTeam.setTeamBudget();
              for(int j = 0; j< NUMOFPLAYERS; j++){
                 currentTeam.teamPlayers[j] = new Player();
              }
-             
         }
         
 
@@ -67,8 +67,10 @@ public class Main{
         // Setting player names for the teams.
         for (int i = 0; i< fantasyTeams.length; i++){
             String currentTeamName = fantasyTeams[i].getTeamName();
+            Team currentTeam = fantasyTeams[i];
+
             for (int j = 0; j<NUMOFPLAYERS; j++){
-                Player currentPlayer = fantasyTeams[i].teamPlayers[j];
+                Player currentPlayer = currentTeam.teamPlayers[j];
                 System.out.println("Enter players for " + currentTeamName + ":\n");
                 
                 System.out.println("Enter name for player # " + (j+1)+":");
@@ -77,19 +79,51 @@ public class Main{
 
                 System.out.println("Enter number of goals for " + currentPlayer.getPlayerName());
                 tempValue = scan.nextInt();
+                
                 currentPlayer.setPlayerGoals(tempValue);
+                currentTeam.setTeamGoals(tempValue);
+               
 
                 System.out.println("Enter number of assists for " + currentPlayer.getPlayerName());
                 tempValue = scan.nextInt();
+                
                 currentPlayer.setPlayerAssists(tempValue);
+                currentTeam.setTeamAssists(tempValue);
 
                 currentPlayer.setPlayerTotal();
-                
+                currentTeam.setTeamTotal();
+                scan.nextLine();
             }
-           
+            currentTeam.setTeamStars();
             System.out.println("\n");
-        } 
+        }           
 
+        // Displaying Team Report
+        System.out.println(teamReportHeader);
+        System.out.println(longLine);
+        for(int i = 0; i< NUMOFTEAMS; i++){
+            Team currentTeam = fantasyTeams[i];
+            currentTeam.outputTeamDetails();
+            System.out.println("\n");
+        }
+
+        // Displaying Player Report
+        System.out.println("\n");
+        System.out.println(playerReportHeader);
+        System.out.println(longLine);
+
+        // Nested for loop for current team and its player stats
+        for (int i = 0; i<NUMOFTEAMS; i++){
+            Team currentTeam = fantasyTeams[i];
+            for (int j= 0; j< NUMOFPLAYERS; j++){
+                System.out.println(currentTeam.getTeamName());
+                Player currentPlayer = currentTeam.teamPlayers[j];
+                currentPlayer.outputPlayerDetails();
+                System.out.println("\n");
+            }
+        }
+
+        scan.close();
     } 
 
 

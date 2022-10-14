@@ -13,7 +13,8 @@ public class Player {
     // METHODS 
 
     public void outputPlayerDetails(){
-
+        System.out.println(this.playerName + " Assists: "+ this.playerAssists +" Goals: "+ this.playerGoals + 
+        " Total Points: "+this.playerTotal);
     }
 
     // GETTERS
@@ -52,5 +53,28 @@ public class Player {
 
     public void setPlayerTotal(){
         this.playerTotal = this.playerGoals + this.playerAssists;
+    }
+
+    public static int readInt(){
+        Scanner scan = new Scanner(System.in);
+    
+        int tempNum = 0;
+        String userInput;
+        boolean validInput = false;
+        //running loop until valid input
+        while(validInput == false){
+            userInput = scan.nextLine();
+    
+            try {
+                tempNum = Integer.parseInt(userInput);
+                validInput = true;
+                scan.close();
+            }
+            catch(NumberFormatException e) {
+                System.out.println("Please only enter a positive value");
+            }
+        }
+        return tempNum;
+        
     }
 }

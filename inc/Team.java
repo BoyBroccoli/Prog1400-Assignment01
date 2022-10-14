@@ -1,19 +1,17 @@
 package inc;
 import java.util.Scanner;
-import inc.Player;
 import java.util.Random;
-import java.text.DecimalFormat;
-
+import static inc.Validation.validateInput; // importing created Validation method.
 
 public class Team {
-
+    private static final int NUMOFPLAYERS = 3;
     // INSTANCE VARIABLES
     private String teamName;
     private double teamGoals;
     private double teamAssists;
     private double teamTotal;
-    double teamBudget;
-    String teamStars;
+    private double teamBudget;
+    private String teamStars;
     public Player[] teamPlayers; 
 
     // METHODS 
@@ -58,7 +56,6 @@ public class Team {
     // SETTERS
 
     public void setTeamName(String name){
-        Scanner scan = new Scanner(System.in);
         this.teamName = name;
     }
 
@@ -92,9 +89,39 @@ public class Team {
         }
     }
 
-    public static final DecimalFormat decilForm = new DecimalFormat("0.00");
-   
+    public static void setTeamInfo(Team currentTeam){
+        Scanner scan = new Scanner(System.in);
+        String currentTeamName = currentTeam.getTeamName();
+        String userInput;
+        int tempValue;
 
-    
+        for (int i = 0; i<NUMOFPLAYERS; i++){
+            Player currentPlayer = currentTeam.teamPlayers[i];
+            String currentPlayerName;
+            System.out.println("Enter players for " + currentTeamName + ":\n");
+            System.out.println("");
+            
+            System.out.println("Enter name for player # " + (i+1));
+            userInput = scan.nextLine();
+            currentPlayer.setPlayerName(userInput);
+            currentPlayerName = currentPlayer.getPlayerName();
+            System.out.println("");
 
+            System.out.println("Enter number of goals for " + currentPlayerName);
+            tempValue= validateInput();
+            
+            currentPlayer.setPlayerGoals(tempValue);
+            currentTeam.setTeamGoals(tempValue);
+            System.out.println("");
+
+            System.out.println("Enter number of assists for " + currentPlayerName);
+            tempValue = validateInput();
+
+            currentPlayer.setPlayerAssists(tempValue);
+            currentTeam.setTeamAssists(tempValue);
+
+            currentPlayer.setPlayerTotal();
+            currentTeam.setTeamTotal();
+        }
+    }
 }

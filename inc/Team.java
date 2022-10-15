@@ -14,63 +14,51 @@ public class Team {
     private String teamStars;
     public Player[] teamPlayers; 
 
-    // METHODS 
 
+    // METHODS 
     public Team(){
         this.teamPlayers = new Player[4];
     }
-
     public void outputTeamDetails(){
-        System.out.println(this.teamName + " Assists: "+ this.teamAssists +
-        " Goals: "+ this.teamGoals + " Total Points: "+this.teamTotal +
-        " Budget : $" + this.getTeamBudget() + " Rating: " + this.teamStars);
+        System.out.println(this.teamName + "\n ASSISTS: "+ this.teamAssists +
+        "\n GOALS: "+ this.teamGoals + "\n TOTAL POINTS: "+this.teamTotal +
+        "\n BUDGET: $" + this.getTeamBudget() + "\n RATING: " + this.teamStars);
     }
 
 
     // GETTERS
-
     public double getTeamGoals(){
         return this.teamGoals;
     }
-
     public double getTeamAssists(){
         return this.teamAssists;
     }
-
     public double getTeamTotal(){
         return this.teamTotal;
     }
-
     public String getTeamName(){
         return this.teamName;
     }
-
     public String getTeamBudget(){
         return String.format("%.2f", this.teamBudget);
     }
-
     public String getTeamStars(){
         return this.teamStars;
     }
 
     // SETTERS
-
     public void setTeamName(String name){
         this.teamName = name;
     }
-
     public void setTeamGoals(double goals){
         this.teamGoals += goals;
     }
-
     public void setTeamAssists(double assists){
         this.teamAssists += assists;
     }
-
     public void setTeamTotal(){
         this.teamTotal += this.teamGoals + this.teamAssists;
     }
-
     public void setTeamBudget(){
         Random random = new Random();
         int rangeMin = 0;
@@ -78,7 +66,6 @@ public class Team {
         double teamBudget = rangeMin + (rangeMax - rangeMin) * random.nextDouble();
         this.teamBudget = teamBudget;
     }
-
     public void setTeamStars(){
         if (this.teamTotal > 20){
             this.teamStars = "*** stars";
@@ -88,7 +75,6 @@ public class Team {
             this.teamStars =" ";
         }
     }
-
     public static void setTeamInfo(Team currentTeam){
         Scanner scan = new Scanner(System.in);
         String currentTeamName = currentTeam.getTeamName();

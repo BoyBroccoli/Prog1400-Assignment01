@@ -10,8 +10,8 @@ public class Player {
 
     // METHODS 
     public void outputPlayerDetails(){
-        System.out.println(this.playerName + " Assists: "+ this.playerAssists +" Goals: "+ this.playerGoals + 
-        " Total Points: "+this.playerTotal);
+        System.out.println(this.playerName +" Stats " + "\n ASSISTS: "+ this.playerAssists +"\n GOALS: "+ this.playerGoals + 
+        "\n TOTAL POINTS: "+this.playerTotal);
     }
 
     // GETTERS
